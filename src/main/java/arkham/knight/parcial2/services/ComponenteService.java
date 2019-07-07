@@ -23,7 +23,7 @@ public class ComponenteService {
         return componenteRepository.findAll();
     }
 
-    public Componente findComponenteById(int id){
+    public Componente findComponenteById(String id){
 
         return componenteRepository.findComponenteById(id);
     }
@@ -34,6 +34,11 @@ public class ComponenteService {
         componenteRepository.delete(componente);
     }
 
+
+    public void deleteAllComponents(){
+
+        componenteRepository.deleteAll();
+    }
 
 
 

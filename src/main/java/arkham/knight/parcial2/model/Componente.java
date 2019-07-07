@@ -3,19 +3,22 @@ package arkham.knight.parcial2.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+// Importante
+// Con esta anotacion le indicamos a mongodb que esta clase sera tratada como un documento y sera guardada en una collection y
+//el nombre del collection sera el nombre que tiene la clase
 @Document
 public class Componente {
 
+    // En mongo lo correcto es trabajar el id en string ya que esto funciona diferente de una base de datos relacional
     @Id
-    private int id;
+    private String id;
 
     private String descripcion;
     private String  codigoAlmacen;
     private float balanceActual;
     private String unidadCompra;
 
-    public Componente(int id, String descripcion, String codigoAlmacen, float balanceActual, String unidadCompra) {
-        this.id = id;
+    public Componente(String descripcion, String codigoAlmacen, float balanceActual, String unidadCompra) {
         this.descripcion = descripcion;
         this.codigoAlmacen = codigoAlmacen;
         this.balanceActual = balanceActual;
@@ -26,11 +29,11 @@ public class Componente {
     }
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -69,7 +72,7 @@ public class Componente {
     @Override
     public String toString() {
         return "Componente{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", codigoAlmacen='" + codigoAlmacen + '\'' +
                 ", balanceActual=" + balanceActual +

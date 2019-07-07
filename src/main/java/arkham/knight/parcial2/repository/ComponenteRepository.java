@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ComponenteRepository extends MongoRepository<Componente, Integer> {
+public interface ComponenteRepository extends MongoRepository<Componente, String> {
 
-    Componente findComponenteById(int id);
+    Componente findComponenteById(String id);
 }

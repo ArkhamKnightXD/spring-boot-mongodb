@@ -1,7 +1,6 @@
 package arkham.knight.parcial2;
 
 import arkham.knight.parcial2.model.Componente;
-import arkham.knight.parcial2.repository.ComponenteRepository;
 import arkham.knight.parcial2.services.ComponenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,20 +18,25 @@ public class Parcial2Application implements CommandLineRunner {
 	}
 
 
-
+	//Trabaje estos datos aqui para hacer una prueba rapida sobre si funcionaba bien, aunque esto es una buena opcion si deseamos
+	//Agregar un par de datos cuando se ejecuta el programa
+//Si voy a trabajar en el main con mongo debo de hacerlo de esta forma ya que en la clase implemente commandlinerunner
 	    @Override
 		public void run(String... args) throws Exception{
 
-		//componenteService.deleteAll();
+			componenteService.deleteAllComponents();
 
-			Componente componente1 = new Componente(1,"Mouse de pc","1234",150,"Caja");
 
-			Componente componente2 = new Componente(2,"Mouse de laptop","1244",170,"Caja");
-			// save a couple of customers
+			Componente componente1 = new Componente("Mouse de pc","1234",150,"Caja");
+
+			Componente componente2 = new Componente("Mouse de laptop","1244",170,"Caja");
+
+			// Aqui guardo los componentes en la base de datos
 			componenteService.createComponent(componente1);
 			componenteService.createComponent(componente2);
 
-			// fetch all customers
+
+			// Aqui listo todos los componentes
 			System.out.println("Componentes encontrados:");
 			System.out.println("-------------------------------");
 			for (Componente componente : componenteService.listarComponentes()) {
