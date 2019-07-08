@@ -13,14 +13,15 @@ public class MovimientoInventario {
     private String tipoMovimiento;
     private int Cantidad;
     private String unidad;
+    private String codigoAlmacen;
 
     private Componente componente;
 
-
-    public MovimientoInventario(String tipoMovimiento, int cantidad, String unidad, Componente componente) {
+    public MovimientoInventario(String tipoMovimiento, int cantidad, String unidad, String codigoAlmacen, Componente componente) {
         this.tipoMovimiento = tipoMovimiento;
         Cantidad = cantidad;
         this.unidad = unidad;
+        this.codigoAlmacen = codigoAlmacen;
         this.componente = componente;
     }
 
@@ -57,6 +58,14 @@ public class MovimientoInventario {
 
     public void setUnidad(String unidad) {
         this.unidad = unidad;
+    }
+
+    public String getCodigoAlmacen() {
+        return codigoAlmacen;
+    }
+
+    public void setCodigoAlmacen(String codigoAlmacen) {
+        this.codigoAlmacen = codigoAlmacen;
     }
 
     public Componente getComponente() {

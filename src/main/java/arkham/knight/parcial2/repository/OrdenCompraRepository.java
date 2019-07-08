@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrdenCompraRepository extends MongoRepository<OrdenCompra, String> {
+    OrdenCompra findOrdenCompraById(String id);
 }

@@ -134,7 +134,7 @@
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu" data-widget="tree">
                 <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="/componente/"><i class="fa fa-users"></i> <span>Componentes</span></a></li>
+                <li><a href="/componente/"><i class="fa fa-users"></i> <span>Componentes</span></a></li>
                 <li><a href="/suplidor/"><i class="fa fa-desktop"></i> <span>Suplidores</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-briefcase"></i> <span>Negocio</span>
@@ -143,7 +143,7 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/orden-compra/">Ordenes</a></li>
+                        <li class="active"><a href="/orden-compra/">Ordenes</a></li>
                     </ul>
                 </li>
 
@@ -168,10 +168,10 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1 class="text-center">
-                <strong>Listado de componentes</strong>
+                <strong>Listado de Ordenes</strong>
             </h1>
 
-            <a class="btn btn-primary" href="/componente/creacion" role="button">Agregar nuevo componente</a>
+            <a class="btn btn-primary" href="/componente/creacion" role="button">Agregar nueva orden</a>
 
 
         </section>
