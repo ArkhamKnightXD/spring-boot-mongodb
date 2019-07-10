@@ -35,4 +35,10 @@ public class OrdenCompraService {
         ordenCompraRepository.delete(ordenCompra);
     }
 
+    public void deleteAllOrden(){
+
+        ordenCompraRepository.deleteAll();
+    }
+
+
 }

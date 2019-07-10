@@ -60,5 +60,13 @@ public class Suplidor {
         this.componentes = componentes;
     }
 
-
+    @Override
+    public String toString() {
+        return "Suplidor{" +
+                "id='" + id + '\'' +
+                ", tiempoEntrega=" + tiempoEntrega +
+                ", precioCompra=" + precioCompra +
+                ", componentes=" + componentes +
+                '}';
+    }
 }

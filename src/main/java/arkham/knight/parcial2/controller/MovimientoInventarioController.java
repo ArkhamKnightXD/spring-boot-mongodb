@@ -17,6 +17,8 @@ public class MovimientoInventarioController {
     @RequestMapping("/")
     public String index(Model model ){
 
+        model.addAttribute("movimientos", movimientoInventarioService.listarMovimientoInventario());
+
 
         return "freemarker/movimientos";
     }

@@ -75,4 +75,16 @@ public class MovimientoInventario {
     public void setComponente(Componente componente) {
         this.componente = componente;
     }
+
+    @Override
+    public String toString() {
+        return "MovimientoInventario{" +
+                "id='" + id + '\'' +
+                ", tipoMovimiento='" + tipoMovimiento + '\'' +
+                ", Cantidad=" + Cantidad +
+                ", unidad='" + unidad + '\'' +
+                ", codigoAlmacen='" + codigoAlmacen + '\'' +
+                ", componente=" + componente +
+                '}';
+    }
 }

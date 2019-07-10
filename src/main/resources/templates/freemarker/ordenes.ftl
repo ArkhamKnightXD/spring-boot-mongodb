@@ -188,24 +188,20 @@
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
 
-                            <th>Descripcion</th>
-                            <th>Balance</th>
-                            <th>Unidad de compra</th>
-                            <th>Codigo de almacen</th>
+                            <th>Fecha de la orden</th>
+                            <th>Monto total</th>
                             <th>Opciones</th>
                             </thead>
 
-                            <#list componentes as componente>
+                            <#list ordenes as orden>
                             <tr>
 
-                                <td>${componente.descripcion}</td>
-                                <td>${componente.balanceActual}</td>
-                                <td>${componente.unidadCompra}</td>
-                                <td>${componente.codigoAlmacen}</td>
+                                <td>${orden.fechaOrden?date}</td>
+                                <td>${orden.montoTotal}</td>
 
                                 <td>
-                                    <a href="/componente/edicion/?id=${componente.id}">  <i class="fa fa-edit" style="font-size:25px"></i></a>
-                                    <a href="/componente/borrar/?id=${componente.id}"  data-toggle="modal"> <i class="fa fa-trash" style="font-size:23px;color:red"></i> </a>
+                                    <a href="/orden-compra/mostrar/?id=${orden.id}">  <i class="fa fa-eye" style="font-size:25px"></i></a>
+                                    <a href="/orden-compra//borrar/?id=${orden.id}"  data-toggle="modal"> <i class="fa fa-trash" style="font-size:23px;color:red"></i> </a>
                                 </td>
                             </tr>
                             </#list>

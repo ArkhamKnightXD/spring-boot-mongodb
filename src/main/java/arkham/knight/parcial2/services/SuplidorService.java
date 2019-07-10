@@ -14,8 +14,21 @@ public class SuplidorService {
     private SuplidorRepository suplidorRepository;
 
 
+    public void createSuplidor(Suplidor suplidor){
+
+        suplidorRepository.save(suplidor);
+
+    }
+
+
     public List<Suplidor> listarSuplidores(){
 
         return suplidorRepository.findAll();
     }
+
+    public void deleteAllSuplidores(){
+
+        suplidorRepository.deleteAll();
+    }
+
 }

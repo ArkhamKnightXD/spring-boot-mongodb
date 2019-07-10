@@ -72,4 +72,15 @@ public class OrdenCompra {
     public void setComponentes(List<Componente> componentes) {
         this.componentes = componentes;
     }
+
+    @Override
+    public String toString() {
+        return "OrdenCompra{" +
+                "id='" + id + '\'' +
+                ", fechaOrden=" + fechaOrden +
+                ", montoTotal=" + montoTotal +
+                ", suplidor=" + suplidor +
+                ", componentes=" + componentes +
+                '}';
+    }
 }

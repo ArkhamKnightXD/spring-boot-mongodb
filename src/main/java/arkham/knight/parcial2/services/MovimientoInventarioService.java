@@ -30,5 +30,9 @@ public class MovimientoInventarioService {
         movimientoInventarioRepository.delete(movimientoInventario);
     }
 
+    public void deleteAllMovimientos(){
+
+        movimientoInventarioRepository.deleteAll();
+    }
 
 }

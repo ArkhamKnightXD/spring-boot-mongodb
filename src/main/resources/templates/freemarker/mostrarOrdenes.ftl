@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+<!--Nota no se pueden copiar y pegar la misma plantilla para usarse, pues dara error, por lo tanto es necesario poner una plantilla
+ de base y que las demas hereden-->
+
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pc Parts & Store</title>
+    <title>${titulo}</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+    <!-- Nota importante para agregar recursos. los recursos se guardan en la carpeta static y esta no es necesario que se mencione
+     cuando se esta agregando el link como se ve en el link de abajo no mencione static en ningun momento
+     por ultimo para indicar que saldremos de una carpeta para ir para atras esto se indica con ../ -->
     <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
@@ -30,7 +40,26 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -42,7 +71,7 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>C</b>XA</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Pc Parts</b>CXA</span>
+            <span class="logo-lg"><b>Electro</b>CXA</span>
         </a>
 
         <!-- Header Navbar -->
@@ -63,7 +92,7 @@
                             <!-- The user image in the navbar-->
                             <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">Admin</span>
+                            <span class="hidden-xs">User</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- The user image in the menu -->
@@ -72,7 +101,6 @@
 
                                 <p>
 
-                                    Admin
                                     <!--Aqui agrego el nombre del usuario logueado -->
                                 </p>
                             </li>
@@ -143,7 +171,7 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/orden-compra/">Ordenes</a></li>
+                        <li class="active"><a href="/orden-compra/">Ordenes</a></li>
                     </ul>
                 </li>
 
@@ -154,13 +182,13 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="/movimiento-inventario/">Movimientos</a></li>
+                        <li><a href="/movimiento-inventario/">Movimientos</a></li>
                     </ul>
                 </li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
-        <!-- /.sidebar -->
+
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
@@ -168,11 +196,9 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1 class="text-center">
-                <strong>Listado de movimientos de inventario</strong>
+                <!--Aqui agregare el texto de la pagina -->
+                <strong>Ordenes de compra hecha por el suplidor: Karvin  </strong>
             </h1>
-
-            <a class="btn btn-primary" href="/movimiento-inventario/creacion" role="button">Agregar nuevo movimiento</a>
-
 
         </section>
 
@@ -187,31 +213,31 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
-
-                            <th>Tipo de movimiento</th>
-                            <th>Codigo de almacen</th>
-                            <th>Cantidad</th>
-                            <th>Unidad</th>
                             <th>Descripcion del componente</th>
-                            <th>Opciones</th>
+                            <th>Codigo del almacen</th>
+                            <th>Unidad de compra</th>
+                            <th>Balance actual</th>
+
                             </thead>
 
-                            <#list movimientos as movimiento>
-                            <tr>
+                            <!--Aqui itero los equipos obtenidos del alquiler -->
+                            <#list componentes as componente >
+                                <tr>
+                                    <td>${componente.descripcion}</td>
+                                    <td>${componente.codigoAlmacen}</td>
+                                    <td>${componente.unidadCompra}</td>
+                                    <td>${componente.balanceActual}</td>
 
-                                <td>${movimiento.tipoMovimiento}</td>
-                                <td>${movimiento.codigoAlmacen}</td>
-                                <td>${movimiento.cantidad}</td>
-                                <td>${movimiento.unidad}</td>
-                                <td>${movimiento.componente.descripcion}</td>
-
-
-                                <td>
-                                    <a href="/movimiento-inventario/edicion/?id=${movimiento.id}">  <i class="fa fa-edit" style="font-size:25px"></i></a>
-                                    <a href="/movimiento-inventario/borrar/?id=${movimiento.id}"  data-toggle="modal"> <i class="fa fa-trash" style="font-size:23px;color:red"></i> </a>
-                                </td>
-                            </tr>
+                                </tr>
                             </#list>
+                            <tfoot>
+                            <tr>
+                                <th>Fecha de entrega: ${orden.fechaOrden?date} </th>
+                                <th>Monto total de la orden: ${orden.montoTotal}</th>
+                            </tr>
+                            </tfoot>
+                            <!--Aqui cierro el foreach -->
+
                         </table>
 
                     </div>
