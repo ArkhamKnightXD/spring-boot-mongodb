@@ -61,10 +61,10 @@
 
 
             <div class="form-group">
-                <label for="balanceActual" class="control-label col-md-3">Balance actual:</label>
+                <label for="stock" class="control-label col-md-3">Balance actual:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <input type="text" name="balanceActual" value="${componente.balanceActual}" class="form-control" required placeholder="Balance Actual...">
+                    <input type="number" name="stock" value="${componente.stock}" class="form-control" required placeholder="Stock...">
                 </div>
 
             </div>

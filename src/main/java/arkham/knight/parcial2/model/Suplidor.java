@@ -12,13 +12,15 @@ public class Suplidor {
     @Id
     private String id;
 
+    private String nombre;
     private Date tiempoEntrega;
     private float precioCompra;
 
     //Un suplidor traer uno o varios componentes.
     private List<Componente> componentes;
 
-    public Suplidor(Date tiempoEntrega, float precioCompra, List<Componente> componentes) {
+    public Suplidor(String nombre, Date tiempoEntrega, float precioCompra, List<Componente> componentes) {
+        this.nombre = nombre;
         this.tiempoEntrega = tiempoEntrega;
         this.precioCompra = precioCompra;
         this.componentes = componentes;
@@ -33,6 +35,14 @@ public class Suplidor {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Date getTiempoEntrega() {

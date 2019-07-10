@@ -189,7 +189,7 @@
                             <thead>
 
                             <th>Descripcion</th>
-                            <th>Balance</th>
+                            <th>Stock</th>
                             <th>Unidad de compra</th>
                             <th>Codigo de almacen</th>
                             <th>Opciones</th>
@@ -199,7 +199,7 @@
                             <tr>
 
                                 <td>${componente.descripcion}</td>
-                                <td>${componente.balanceActual}</td>
+                                <td>${componente.stock}</td>
                                 <td>${componente.unidadCompra}</td>
                                 <td>${componente.codigoAlmacen}</td>
 

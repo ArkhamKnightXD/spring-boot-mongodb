@@ -15,13 +15,15 @@ public class Componente {
 
     private String descripcion;
     private String  codigoAlmacen;
-    private float balanceActual;
+    private int stock;
+    //la unidad de compra basicamente es el precio me confundi debo de cambiar esto
     private String unidadCompra;
 
-    public Componente(String descripcion, String codigoAlmacen, float balanceActual, String unidadCompra) {
+
+    public Componente(String descripcion, String codigoAlmacen, int stock, String unidadCompra) {
         this.descripcion = descripcion;
         this.codigoAlmacen = codigoAlmacen;
-        this.balanceActual = balanceActual;
+        this.stock = stock;
         this.unidadCompra = unidadCompra;
     }
 
@@ -53,12 +55,12 @@ public class Componente {
         this.codigoAlmacen = codigoAlmacen;
     }
 
-    public float getBalanceActual() {
-        return balanceActual;
+    public int getStock() {
+        return stock;
     }
 
-    public void setBalanceActual(float balanceActual) {
-        this.balanceActual = balanceActual;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public String getUnidadCompra() {
@@ -69,13 +71,14 @@ public class Componente {
         this.unidadCompra = unidadCompra;
     }
 
+
     @Override
     public String toString() {
         return "Componente{" +
                 "id='" + id + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", codigoAlmacen='" + codigoAlmacen + '\'' +
-                ", balanceActual=" + balanceActual +
+                ", stock=" + stock +
                 ", unidadCompra='" + unidadCompra + '\'' +
                 '}';
     }

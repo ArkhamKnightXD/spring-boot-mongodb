@@ -54,9 +54,9 @@ public class Parcial2Application implements CommandLineRunner {
 
 
 
-			Componente componente1 = new Componente("Mouse de pc","1234",150,"Caja");
+			Componente componente1 = new Componente("Mouse de pc","1234",100,"Caja");
 
-			Componente componente2 = new Componente("Mouse de laptop","1244",170,"Caja");
+			Componente componente2 = new Componente("Mouse de laptop","1244",110,"Caja");
 
 			// Aqui guardo los componentes en la base de datos
 			componenteService.createComponent(componente1);
@@ -78,7 +78,7 @@ public class Parcial2Application implements CommandLineRunner {
 			//Especifico un date aqui ya que es la forma mas rapida de agregar un date a un objeto
 			Date date = new Date(22-7-2019);
 
-			Suplidor suplidor = new Suplidor(date,500,listaComponente);
+			Suplidor suplidor = new Suplidor("Maria Castro",date,500,listaComponente);
 
 			suplidorService.createSuplidor(suplidor);
 

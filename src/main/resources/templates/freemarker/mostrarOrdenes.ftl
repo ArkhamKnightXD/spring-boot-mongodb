@@ -197,7 +197,7 @@ desired effect
         <section class="content-header">
             <h1 class="text-center">
                 <!--Aqui agregare el texto de la pagina -->
-                <strong>Ordenes de compra hecha por el suplidor: Karvin  </strong>
+                <strong>Suplidor: ${suplidor.nombre}</strong>
             </h1>
 
         </section>
@@ -216,7 +216,7 @@ desired effect
                             <th>Descripcion del componente</th>
                             <th>Codigo del almacen</th>
                             <th>Unidad de compra</th>
-                            <th>Balance actual</th>
+                            <th>Stock</th>
 
                             </thead>
 
@@ -226,17 +226,16 @@ desired effect
                                     <td>${componente.descripcion}</td>
                                     <td>${componente.codigoAlmacen}</td>
                                     <td>${componente.unidadCompra}</td>
-                                    <td>${componente.balanceActual}</td>
+                                    <td>${componente.stock}</td>
 
                                 </tr>
                             </#list>
                             <tfoot>
                             <tr>
-                                <th>Fecha de entrega: ${orden.fechaOrden?date} </th>
+                                <th>Fecha orden: ${orden.fechaOrden?date} </th>
                                 <th>Monto total de la orden: ${orden.montoTotal}</th>
                             </tr>
                             </tfoot>
-                            <!--Aqui cierro el foreach -->
 
                         </table>
 

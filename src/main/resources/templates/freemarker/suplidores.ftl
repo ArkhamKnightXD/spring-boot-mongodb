@@ -188,6 +188,7 @@
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
 
+                            <th>Nombre del suplidor</th>
                             <th>Fecha de entrega</th>
                             <th>Precio de este suplidor</th>
                             <th>Opciones</th>
@@ -196,6 +197,7 @@
                             <#list suplidores as suplidor>
                             <tr>
 
+                                <td>${suplidor.nombre}</td>
                                 <td>${suplidor.tiempoEntrega?date}</td>
                                 <td>${suplidor.precioCompra}</td>
 
