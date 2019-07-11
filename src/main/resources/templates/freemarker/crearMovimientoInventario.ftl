@@ -28,21 +28,25 @@
 
     <section class="content-header">
         <h1 class="text-center">
-            <strong>Crear nueva orden</strong>
+            <strong>Crear nuevo movimiento de inventario</strong>
         </h1>
 
         <br>
     </section>
 
 
-    <form method="post" class="form-horizontal" action="/orden-compra/crear/">
+    <form method="post" class="form-horizontal" action="/movimiento-inventario/crear/">
         <div class="row">
 
             <div class="form-group">
-                <label for="fechaOrden" class="control-label col-md-3">Fecha de la orden:</label>
+                <label for="tipoMovimiento" class="control-label col-md-3">Tipo de movimiento:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <input type="date" name="fechaOrden" class="form-control" required placeholder="Fecha de la orden...">
+                    <select name="tipoMovimiento" class="form-control" required >
+                        <option value="Entrada">Entrada</option>
+                        <option value="Salida">Salida</option>
+                    </select>
+
                 </div>
 
             </div>
@@ -50,12 +54,12 @@
 
 
             <div class="form-group">
-                <label for="idSuplidor" class="control-label col-md-3">Seleccione el suplidor:</label>
+                <label for="idComponente" class="control-label col-md-3">Seleccione el componente:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <select name="idSuplidor" class="form-control" id="idSuplidor">
-                        <#list suplidores as suplidor >
-                            <option value="${suplidor.id}">${suplidor.nombre} - Fecha de entrega: ${suplidor.tiempoEntrega?date} </option>
+                    <select name="idComponente" class="form-control" id="idComponente">
+                        <#list componentes as componente >
+                            <option value="${componente.id}">${componente.descripcion} - Stock: ${componente.stock}</option>
                         </#list>
                     </select>
                 </div>
@@ -64,29 +68,30 @@
 
 
             <div class="form-group">
-                <label for="idComponentes" class="control-label col-md-3">Seleccione los componentes que desee:</label>
+                <label for="cantidad" class="control-label col-md-3">Cantidad:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <select multiple class="form-control" required name="idComponentes">
-                        <#list componentes as componente>
-                            <#if componente.stock gt 0>
-                                <option value="${componente.id}" class="equipo-option"  >${componente.descripcion} (${componente.stock}) - $${componente.precioUnidadCompra}</option>
-                            </#if>
-                        </#list>
-                    </select>
+                    <input type="number" name="cantidad" class="form-control" required placeholder="Cantidad...">
                 </div>
-
 
             </div>
 
 
+            <div class="form-group">
+                <label for="unidad" class="control-label col-md-3">Unidad:</label>
+
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
+                    <input type="text" name="unidad" class="form-control" required placeholder="Unidad...">
+                </div>
+
+            </div>
 
 
 
 
             <div class="form-group">
                 <button class="btn btn-primary col-md-offset-5" type="submit">Guardar</button>
-                <a class="btn btn-danger" href="/orden-compra/" role="button">Cancelar</a>
+                <a class="btn btn-danger" href="/movimiento-inventario/" role="button">Cancelar</a>
             </div>
 
 

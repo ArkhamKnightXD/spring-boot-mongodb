@@ -62,9 +62,9 @@ public class Parcial2Application implements CommandLineRunner {
 			componenteService.createComponent(componente1);
 			componenteService.createComponent(componente2);
 
-			MovimientoInventario movimientoInventario = new MovimientoInventario("Entrada",12,"cajas","1425", componente1);
+			MovimientoInventario movimientoInventario = new MovimientoInventario("Entrada",componente1.getStock(),"unidad",componente1.getCodigoAlmacen(), componente1);
 
-			MovimientoInventario movimientoInventario2 = new MovimientoInventario("Salida",10,"cajas","1426", componente2);
+			MovimientoInventario movimientoInventario2 = new MovimientoInventario("Entrada",componente2.getStock(),"unidad",componente2.getCodigoAlmacen(), componente2);
 
 			movimientoInventarioService.createMovimientoInventario(movimientoInventario);
 
@@ -72,21 +72,30 @@ public class Parcial2Application implements CommandLineRunner {
 
 			List<Componente> listaComponente = new ArrayList<>();
 
+			List<Componente> listaComponente2 = new ArrayList<>();
+
 			listaComponente.add(componente1);
 			listaComponente.add(componente2);
 
-			//Especifico un date aqui ya que es la forma mas rapida de agregar un date a un objeto
-			Date date = new Date(7-22-2017);
+			listaComponente2.add(componente1);
+
+			//Especifico un date aqui ya que es la forma mas rapida de agregar un date a un objeto si lo dejo vacio
+			// pondra automaticamente la fecha de hoy
+			Date date = new Date();
+
 
 			Suplidor suplidor = new Suplidor("Maria Castro",date,500,listaComponente);
 
+			Suplidor suplidor1 = new Suplidor("Joshua Anuel", date, 200, listaComponente2);
+
 			suplidorService.createSuplidor(suplidor);
+			suplidorService.createSuplidor(suplidor1);
 
 
 
 			OrdenCompra ordenCompra =new OrdenCompra(date,suplidor,listaComponente);
 
-			ordenCompra.setMontoTotal(200);
+			ordenCompra.setMontoTotal(25750);
 
 			ordenCompraService.createOrdenCompra(ordenCompra);
 
@@ -101,6 +110,12 @@ public class Parcial2Application implements CommandLineRunner {
 			for (Componente componente : componenteService.listarComponentes()) {
 				System.out.println(componente.toString());
 			}
+			System.out.println();
+
+
+			System.out.println("Componente mediante aggregate:");
+			System.out.println("-------------------------------");
+			System.out.println(componenteService.getComponenteByAggregation().toString());
 			System.out.println();
 
 

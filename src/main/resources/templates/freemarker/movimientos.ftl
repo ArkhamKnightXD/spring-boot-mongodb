@@ -189,27 +189,22 @@
                             <thead>
 
                             <th>Tipo de movimiento</th>
+                            <th>Descripcion del articulo</th>
                             <th>Codigo de almacen</th>
-                            <th>Cantidad</th>
+                            <th>Cantidad en stock</th>
                             <th>Unidad</th>
-                            <th>Descripcion del componente</th>
-                            <th>Opciones</th>
+
                             </thead>
 
                             <#list movimientos as movimiento>
                             <tr>
 
                                 <td>${movimiento.tipoMovimiento}</td>
+                                <td>${movimiento.componente.descripcion}</td>
                                 <td>${movimiento.codigoAlmacen}</td>
                                 <td>${movimiento.cantidad}</td>
                                 <td>${movimiento.unidad}</td>
-                                <td>${movimiento.componente.descripcion}</td>
 
-
-                                <td>
-                                    <a href="/movimiento-inventario/edicion/?id=${movimiento.id}">  <i class="fa fa-edit" style="font-size:25px"></i></a>
-                                    <a href="/movimiento-inventario/borrar/?id=${movimiento.id}"  data-toggle="modal"> <i class="fa fa-trash" style="font-size:23px;color:red"></i> </a>
-                                </td>
                             </tr>
                             </#list>
                         </table>

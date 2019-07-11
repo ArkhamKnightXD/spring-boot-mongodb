@@ -201,7 +201,6 @@
 
                                 <td>
                                     <a href="/orden-compra/mostrar/?id=${orden.id}">  <i class="fa fa-eye" style="font-size:25px"></i></a>
-                                    <a href="/orden-compra//borrar/?id=${orden.id}"  data-toggle="modal"> <i class="fa fa-trash" style="font-size:23px;color:red"></i> </a>
                                 </td>
                             </tr>
                             </#list>

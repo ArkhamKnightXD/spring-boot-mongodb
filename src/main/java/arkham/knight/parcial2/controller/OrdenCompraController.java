@@ -65,8 +65,6 @@ public class OrdenCompraController {
              )
         {
 
-
-
             Componente componenteDeOrdenCompra = componenteService.findComponenteById(idComponentesToLoop);
 
             componenteService.createComponent(componenteDeOrdenCompra);

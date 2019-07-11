@@ -200,7 +200,6 @@
                                 <td>${suplidor.tiempoEntrega?date}</td>
 
                                 <td>
-                                    <a href="/suplidor/edicion/?id=${suplidor.id}">  <i class="fa fa-edit" style="font-size:25px"></i></a>
                                     <a href="/suplidor/borrar/?id=${suplidor.id}"  data-toggle="modal"> <i class="fa fa-trash" style="font-size:23px;color:red"></i> </a>
                                 </td>
                             </tr>

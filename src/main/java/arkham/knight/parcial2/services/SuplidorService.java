@@ -32,6 +32,11 @@ public class SuplidorService {
 
     }
 
+    public void deleteSuplidor(Suplidor suplidor){
+
+        suplidorRepository.delete(suplidor);
+    }
+
     public void deleteAllSuplidores(){
 
         suplidorRepository.deleteAll();

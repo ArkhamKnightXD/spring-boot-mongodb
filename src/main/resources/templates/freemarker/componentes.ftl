@@ -204,7 +204,6 @@
                                 <td>${componente.codigoAlmacen}</td>
 
                                 <td>
-                                    <a href="/componente/edicion/?id=${componente.id}">  <i class="fa fa-edit" style="font-size:25px"></i></a>
                                     <a href="/componente/borrar/?id=${componente.id}"  data-toggle="modal"> <i class="fa fa-trash" style="font-size:23px;color:red"></i> </a>
                                 </td>
                             </tr>
