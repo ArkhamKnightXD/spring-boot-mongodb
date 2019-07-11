@@ -171,7 +171,7 @@
                 <strong>Listado de Ordenes</strong>
             </h1>
 
-            <a class="btn btn-primary" href="/componente/creacion" role="button">Agregar nueva orden</a>
+            <a class="btn btn-primary" href="/orden-compra/creacion/" role="button">Generar nueva orden</a>
 
 
         </section>

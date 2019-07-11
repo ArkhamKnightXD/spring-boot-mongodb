@@ -37,10 +37,10 @@ public class ComponenteController {
 
 
     @RequestMapping( value = "/crear", method = RequestMethod.POST)
-    public String crearComponente(@RequestParam(name = "descripcion") String descripcion, @RequestParam(name = "codigoAlmacen") String codigoAlmacen, @RequestParam(name = "stock") int stock, @RequestParam(name = "unidadCompra") String unidadCompra ){
+    public String crearComponente(@RequestParam(name = "descripcion") String descripcion, @RequestParam(name = "codigoAlmacen") String codigoAlmacen, @RequestParam(name = "stock") int stock, @RequestParam(name = "precioUnidadCompra") float precioUnidadCompra ){
 
 
-        Componente componenteToCreate = new Componente(descripcion,codigoAlmacen,stock,unidadCompra);
+        Componente componenteToCreate = new Componente(descripcion,codigoAlmacen,stock,precioUnidadCompra);
 
         componenteService.createComponent(componenteToCreate);
         return "redirect:/componente/";
@@ -60,7 +60,7 @@ public class ComponenteController {
 
 
     @RequestMapping( value = "/editar")
-    public String editarComponente(@RequestParam(name = "id") String id, @RequestParam(name = "descripcion") String descripcion, @RequestParam(name = "codigoAlmacen") String codigoAlmacen, @RequestParam(name = "stock") int stock, @RequestParam(name = "unidadCompra") String unidadCompra ){
+    public String editarComponente(@RequestParam(name = "id") String id, @RequestParam(name = "descripcion") String descripcion, @RequestParam(name = "codigoAlmacen") String codigoAlmacen, @RequestParam(name = "stock") int stock, @RequestParam(name = "precioUnidadCompra") float precioUnidadCompra ){
 
 
         Componente componenteToEdit = componenteService.findComponenteById(id);
@@ -68,7 +68,7 @@ public class ComponenteController {
         componenteToEdit.setDescripcion(descripcion);
         componenteToEdit.setCodigoAlmacen(codigoAlmacen);
         componenteToEdit.setStock(stock);
-        componenteToEdit.setUnidadCompra(unidadCompra);
+        componenteToEdit.setPrecioUnidadCompra(precioUnidadCompra);
 
 
         componenteService.createComponent(componenteToEdit);

@@ -214,9 +214,9 @@ desired effect
                         <table class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
                             <th>Descripcion del componente</th>
-                            <th>Codigo del almacen</th>
-                            <th>Unidad de compra</th>
-                            <th>Stock</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Importe</th>
 
                             </thead>
 
@@ -224,16 +224,17 @@ desired effect
                             <#list componentes as componente >
                                 <tr>
                                     <td>${componente.descripcion}</td>
-                                    <td>${componente.codigoAlmacen}</td>
-                                    <td>${componente.unidadCompra}</td>
                                     <td>${componente.stock}</td>
+                                    <td>${componente.precioUnidadCompra}</td>
+                                    <!--De esta forma puedo sumar 2 valores en freemarker -->
+                                    <td>${componente.precioUnidadCompra*componente.stock}</td>
 
                                 </tr>
                             </#list>
                             <tfoot>
                             <tr>
                                 <th>Fecha orden: ${orden.fechaOrden?date} </th>
-                                <th>Monto total de la orden: ${orden.montoTotal}</th>
+                                <th>Monto total: ${orden.montoTotal}</th>
                             </tr>
                             </tfoot>
 

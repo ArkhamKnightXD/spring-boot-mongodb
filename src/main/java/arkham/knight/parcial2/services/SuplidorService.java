@@ -26,6 +26,12 @@ public class SuplidorService {
         return suplidorRepository.findAll();
     }
 
+    public Suplidor findSuplidorById(String id){
+
+        return suplidorRepository.findSuplidorById(id);
+
+    }
+
     public void deleteAllSuplidores(){
 
         suplidorRepository.deleteAll();

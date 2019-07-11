@@ -190,7 +190,6 @@
 
                             <th>Nombre del suplidor</th>
                             <th>Fecha de entrega</th>
-                            <th>Precio de este suplidor</th>
                             <th>Opciones</th>
                             </thead>
 
@@ -199,7 +198,6 @@
 
                                 <td>${suplidor.nombre}</td>
                                 <td>${suplidor.tiempoEntrega?date}</td>
-                                <td>${suplidor.precioCompra}</td>
 
                                 <td>
                                     <a href="/suplidor/edicion/?id=${suplidor.id}">  <i class="fa fa-edit" style="font-size:25px"></i></a>

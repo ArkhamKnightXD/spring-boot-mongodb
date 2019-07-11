@@ -16,15 +16,15 @@ public class Componente {
     private String descripcion;
     private String  codigoAlmacen;
     private int stock;
-    //la unidad de compra basicamente es el precio me confundi debo de cambiar esto
-    private String unidadCompra;
+    //Cuando estemos trabajando aplicaciones financieras lo mas correcto es utilizar Decimal a la hora de guardar dinero
+    private float precioUnidadCompra;
 
 
-    public Componente(String descripcion, String codigoAlmacen, int stock, String unidadCompra) {
+    public Componente(String descripcion, String codigoAlmacen, int stock, float precioUnidadCompra) {
         this.descripcion = descripcion;
         this.codigoAlmacen = codigoAlmacen;
         this.stock = stock;
-        this.unidadCompra = unidadCompra;
+        this.precioUnidadCompra = precioUnidadCompra;
     }
 
     public Componente() {
@@ -63,14 +63,13 @@ public class Componente {
         this.stock = stock;
     }
 
-    public String getUnidadCompra() {
-        return unidadCompra;
+    public float getPrecioUnidadCompra() {
+        return precioUnidadCompra;
     }
 
-    public void setUnidadCompra(String unidadCompra) {
-        this.unidadCompra = unidadCompra;
+    public void setPrecioUnidadCompra(float precioUnidadCompra) {
+        this.precioUnidadCompra = precioUnidadCompra;
     }
-
 
     @Override
     public String toString() {
@@ -79,7 +78,7 @@ public class Componente {
                 ", descripcion='" + descripcion + '\'' +
                 ", codigoAlmacen='" + codigoAlmacen + '\'' +
                 ", stock=" + stock +
-                ", unidadCompra='" + unidadCompra + '\'' +
+                ", precioUnidadCompra=" + precioUnidadCompra +
                 '}';
     }
 }

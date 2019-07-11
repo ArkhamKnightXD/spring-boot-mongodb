@@ -22,9 +22,8 @@ public class OrdenCompra {
     // En una orden de compra puede haber uno o varios componentes
     private List<Componente> componentes;
 
-    public OrdenCompra(Date fechaOrden, float montoTotal, Suplidor suplidor, List<Componente> componentes) {
+    public OrdenCompra(Date fechaOrden, Suplidor suplidor, List<Componente> componentes) {
         this.fechaOrden = fechaOrden;
-        this.montoTotal = montoTotal;
         this.suplidor = suplidor;
         this.componentes = componentes;
     }

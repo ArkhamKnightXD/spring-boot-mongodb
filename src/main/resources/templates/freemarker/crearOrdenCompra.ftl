@@ -28,21 +28,21 @@
 
     <section class="content-header">
         <h1 class="text-center">
-            <strong>Editar componente</strong>
+            <strong>Crear nueva orden</strong>
         </h1>
 
         <br>
     </section>
 
 
-    <form method="post" class="form-horizontal" action="/componente/editar/?id=${componente.id}">
+    <form method="post" class="form-horizontal" action="/orden-compra/crear/">
         <div class="row">
 
             <div class="form-group">
-                <label for="descripcion" class="control-label col-md-3">Descripcion del componente:</label>
+                <label for="fechaOrden" class="control-label col-md-3">Fecha de la orden:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <input type="text" name="descripcion" value="${componente.descripcion}" class="form-control" required placeholder="Descripcion...">
+                    <input type="date" name="fechaOrden" class="form-control" required placeholder="Fecha de la orden...">
                 </div>
 
             </div>
@@ -50,40 +50,43 @@
 
 
             <div class="form-group">
-                <label for="codigoAlmacen" class="control-label col-md-3">Codigo del almacen:</label>
+                <label for="idSuplidor" class="control-label col-md-3">Seleccione el suplidor:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <input type="text" name="codigoAlmacen" value="${componente.codigoAlmacen}" class="form-control " placeholder="Codigo del almacen...">
-                </div>
-
-            </div>
-
-
-
-            <div class="form-group">
-                <label for="stock" class="control-label col-md-3">Balance actual:</label>
-
-                <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <input type="number" name="stock" value="${componente.stock}" class="form-control" required placeholder="Stock...">
+                    <select name="idSuplidor" class="form-control" id="idSuplidor">
+                        <#list suplidores as suplidor >
+                            <option value="${suplidor.id}">${suplidor.nombre}</option>
+                        </#list>
+                    </select>
                 </div>
 
             </div>
 
 
             <div class="form-group">
-                <label for="precioUnidadCompra" class="control-label col-md-3">Precio por unidad:</label>
+                <label for="idComponentes" class="control-label col-md-3">Seleccione los componentes que desee:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <input type="text" name="precioUnidadCompra" value="${componente.precioUnidadCompra}" class="form-control" placeholder="Precio por unidad...">
+                    <select multiple class="form-control" required name="idComponentes">
+                        <#list componentes as componente>
+                            <#if componente.stock gt 0>
+                                <option value="${componente.id}" class="equipo-option"  >${componente.descripcion} (${componente.stock}) - $${componente.precioUnidadCompra}</option>
+                            </#if>
+                        </#list>
+                    </select>
                 </div>
 
+
             </div>
+
+
+
 
 
 
             <div class="form-group">
                 <button class="btn btn-primary col-md-offset-5" type="submit">Guardar</button>
-                <a class="btn btn-danger" href="/componente/" role="button">Cancelar</a>
+                <a class="btn btn-danger" href="/orden-compra/" role="button">Cancelar</a>
             </div>
 
 

@@ -14,7 +14,7 @@ public class OrdenCompraService {
     private OrdenCompraRepository ordenCompraRepository;
 
 
-    public void createOrden(OrdenCompra ordenCompra){
+    public void createOrdenCompra(OrdenCompra ordenCompra){
 
         ordenCompraRepository.save(ordenCompra);
     }

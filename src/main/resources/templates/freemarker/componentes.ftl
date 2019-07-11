@@ -190,7 +190,7 @@
 
                             <th>Descripcion</th>
                             <th>Stock</th>
-                            <th>Unidad de compra</th>
+                            <th>Precio por unidad</th>
                             <th>Codigo de almacen</th>
                             <th>Opciones</th>
                             </thead>
@@ -200,7 +200,7 @@
 
                                 <td>${componente.descripcion}</td>
                                 <td>${componente.stock}</td>
-                                <td>${componente.unidadCompra}</td>
+                                <td>${componente.precioUnidadCompra}</td>
                                 <td>${componente.codigoAlmacen}</td>
 
                                 <td>

@@ -71,10 +71,10 @@
 
 
             <div class="form-group">
-                <label for="unidadCompra" class="control-label col-md-3">Unidad de compra:</label>
+                <label for="precioUnidadCompra" class="control-label col-md-3">Precio por unidad:</label>
 
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xs-6">
-                    <input type="text" name="unidadCompra" class="form-control" placeholder="Unidad de compra...">
+                    <input type="text" name="precioUnidadCompra" class="form-control" placeholder="Precio por unidad...">
                 </div>
 
             </div>
