@@ -14,6 +14,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -54,7 +55,15 @@ public class Parcial2Application implements CommandLineRunner {
 
 
 
-			Componente componente1 = new Componente("Mouse de pc","1234",100,120);
+			Date date = new Date();
+
+			//Para conseguir el dia exacto de una fecha en entero debo de utiliar el calendario
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(date);
+
+
+
+			Componente componente1 = new Componente("Mouse de pc","1234",calendar.get(Calendar.DAY_OF_MONTH),120);
 
 			Componente componente2 = new Componente("Mouse de laptop","1244",110,125);
 
@@ -81,7 +90,6 @@ public class Parcial2Application implements CommandLineRunner {
 
 			//Especifico un date aqui ya que es la forma mas rapida de agregar un date a un objeto si lo dejo vacio
 			// pondra automaticamente la fecha de hoy
-			Date date = new Date();
 
 
 			Suplidor suplidor = new Suplidor("Maria Castro",date,500,listaComponente);
@@ -113,12 +121,6 @@ public class Parcial2Application implements CommandLineRunner {
 			System.out.println();
 
 
-			System.out.println("Componente mediante aggregate:");
-			System.out.println("-------------------------------");
-			System.out.println(componenteService.getComponenteByAggregation().toString());
-			System.out.println();
-
-
 			//Aqui listo los movimientos
 			System.out.println("Movimientos  encontrados:");
 			System.out.println("-------------------------------");
@@ -145,9 +147,6 @@ public class Parcial2Application implements CommandLineRunner {
 			System.out.println();
 
 		}
-
-
-
 
 
 }

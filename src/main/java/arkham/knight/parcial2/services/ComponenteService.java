@@ -6,7 +6,6 @@ import static org.springframework.data.mongodb.core.aggregation.Aggregation.matc
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.newAggregation;
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.project;
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.sort;
-
 import arkham.knight.parcial2.model.Componente;
 import arkham.knight.parcial2.repository.ComponenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +26,6 @@ public class ComponenteService {
 
     @Autowired
     private ComponenteRepository componenteRepository;
-
 
     public List<Componente> getComponenteByAggregation(){
 
@@ -68,10 +66,6 @@ public class ComponenteService {
 
         componenteRepository.deleteAll();
     }
-
-
-    // Aqui hare un aggregate
-
 
 
 }
